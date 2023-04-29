@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 namespace RPG.Dialogue
 {
@@ -26,7 +27,11 @@ namespace RPG.Dialogue
         // Setters
         public void UpdateText(string newText)
         {
-            text = newText;
+            if (text != newText)
+            {
+                Undo.RecordObject(this, "Update Dialogue Text");
+                text = newText;
+            }
         }
         public void AddChild(string nodeName)
         {
