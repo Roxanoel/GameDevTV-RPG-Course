@@ -46,6 +46,7 @@ namespace RPG.Dialogue
 #if UNITY_EDITOR
         public void SetRectPosition(Vector2 newPosition)
         {
+            Undo.RecordObject(this, "Move Dialogue Node");
             rect.position = newPosition;
         }
 #endif

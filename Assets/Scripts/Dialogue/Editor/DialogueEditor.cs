@@ -130,7 +130,6 @@ namespace RPG.Dialogue.Editor
             }
             else if (Event.current.type == EventType.MouseDrag && draggingNode != null)
             {
-                Undo.RecordObject(selectedDialogue, "Move Dialogue Node");
                 draggingNode.SetRectPosition(Event.current.mousePosition + draggingOffset);
 
                 GUI.changed = true;
