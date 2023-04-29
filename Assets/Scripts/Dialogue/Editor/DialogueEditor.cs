@@ -59,12 +59,8 @@ namespace RPG.Dialogue.Editor
             if (newSelectedDialogue != null)
             {
                 selectedDialogue = newSelectedDialogue;
+                Repaint();
             }
-            else
-            {
-                selectedDialogue = null;
-            }
-            Repaint();
         }
 
         private void OnGUI()
