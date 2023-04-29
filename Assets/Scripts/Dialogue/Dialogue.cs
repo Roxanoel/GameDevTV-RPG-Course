@@ -60,6 +60,10 @@ namespace RPG.Dialogue
         {
             DialogueNode newNode = CreateInstance<DialogueNode>();
             newNode.uniqueID = Guid.NewGuid().ToString();
+
+            // Registering for undo
+            Undo.RegisterCreatedObjectUndo(newNode, "Created new dialogue node");
+
             if (parent != null)
             {
                 parent.children.Add(newNode.uniqueID);
