@@ -64,12 +64,14 @@ namespace RPG.Dialogue
             {
                 parent.children.Add(newNode.name);
             }
+            Undo.RecordObject(this, "Added Dialogue Node");
             nodes.Add(newNode);
             OnValidate();
         }
 
         public void DeleteNode(DialogueNode nodeToDelete)
         {
+            Undo.RecordObject(this, "Deleted Dialogue Node");
             nodes.Remove(nodeToDelete);
             OnValidate();
 
