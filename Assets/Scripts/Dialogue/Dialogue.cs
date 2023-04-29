@@ -82,6 +82,7 @@ namespace RPG.Dialogue
 #endif
         public void OnBeforeSerialize()
         {
+#if UNITY_EDITOR
             // Before saving, ensure there is always at least one node
             if (nodes.Count < 1)
             {
@@ -100,6 +101,7 @@ namespace RPG.Dialogue
                     }
                 }
             }
+#endif
         }
 
         public void OnAfterDeserialize()
