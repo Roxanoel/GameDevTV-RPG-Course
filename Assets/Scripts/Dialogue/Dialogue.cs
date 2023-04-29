@@ -13,14 +13,6 @@ namespace RPG.Dialogue
 
         Dictionary<string, DialogueNode> nodeLookup = new Dictionary<string, DialogueNode>();
 
-
-#if UNITY_EDITOR        
-        // Called whenever the SO is loaded, in the Editor only 
-        private void Awake()
-        {
-
-        }
-#endif
         // For it to work in a fully exported game, OnValidate() will need to be called from Awake()
         private void OnValidate()
         {
@@ -51,7 +43,7 @@ namespace RPG.Dialogue
                 }
             }
         }
-
+#if UNITY_EDITOR
         public void CreateNode(DialogueNode parent)
         {
             DialogueNode newNode = CreateInstance<DialogueNode>();
@@ -87,7 +79,7 @@ namespace RPG.Dialogue
             Undo.DestroyObjectImmediate(nodeToDelete);
 
         }
-
+#endif
         public void OnBeforeSerialize()
         {
             // Before saving, ensure there is always at least one node

@@ -36,9 +36,11 @@ namespace RPG.Dialogue
         {
             children.Remove(nodeName);
         }
+#if UNITY_EDITOR
         public void SetRectPosition(Vector2 newPosition)
         {
             rect.position = newPosition;
         }
+#endif
     }
 }
