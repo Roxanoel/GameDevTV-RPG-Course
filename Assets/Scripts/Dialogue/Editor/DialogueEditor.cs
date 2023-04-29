@@ -159,7 +159,7 @@ namespace RPG.Dialogue.Editor
             EditorGUI.BeginChangeCheck();
             
             EditorGUILayout.LabelField("ID");
-            string newID = EditorGUILayout.TextField($"{node.uniqueID}");
+            string newID = EditorGUILayout.TextField($"{node.name}");
             EditorGUILayout.LabelField("Text");
             string newText = EditorGUILayout.TextField($"{node.text}");
 
@@ -167,7 +167,7 @@ namespace RPG.Dialogue.Editor
             {
                 Undo.RecordObject(selectedDialogue, "Update Dialogue Text");
                 node.text = newText;
-                node.uniqueID = newID;
+                node.name = newID;
             }
 
             if (GUILayout.Button("Add Child Node"))
@@ -191,12 +191,12 @@ namespace RPG.Dialogue.Editor
                         linkingParentNode = null;
                     }
                 }
-                else if  (linkingParentNode.children.Contains(node.uniqueID))
+                else if  (linkingParentNode.children.Contains(node.name))
                 {
                     if (GUILayout.Button("Unlink Child"))
                     {
                         Undo.RecordObject(selectedDialogue, "Add Dialogue Link");
-                        linkingParentNode.children.Remove(node.uniqueID);
+                        linkingParentNode.children.Remove(node.name);
                         linkingParentNode = null;
                     }
                 }
@@ -204,7 +204,7 @@ namespace RPG.Dialogue.Editor
                 (GUILayout.Button("Select as Child"))
                 {
                     Undo.RecordObject(selectedDialogue, "Add Dialogue Link");
-                    linkingParentNode.children.Add(node.uniqueID);
+                    linkingParentNode.children.Add(node.name);
                     linkingParentNode = null;
                 }
             }
