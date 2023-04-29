@@ -43,7 +43,7 @@ namespace RPG.Dialogue
 
         public IEnumerable<DialogueNode> GetAllChildren(DialogueNode parentNode)
         {
-            foreach (string childID in parentNode.children)
+            foreach (string childID in parentNode.GetChildren())
             {
                 if (nodeLookup.ContainsKey(childID))
                 {
@@ -62,9 +62,12 @@ namespace RPG.Dialogue
 
             if (parent != null)
             {
-                parent.children.Add(newNode.name);
+                parent.AddChild(newNode.name);
             }
-            Undo.RecordObject(this, "Added Dialogue Node");
+            if (AssetDatabase.GetAssetPath(this) != "")
+            {
+                Undo.RecordObject(this, "Added Dialogue Node");
+            }
             nodes.Add(newNode);
             OnValidate();
         }
@@ -78,7 +81,7 @@ namespace RPG.Dialogue
             // Removes dangling children
             foreach(DialogueNode node in GetAllNodes())
             {
-                node.children.Remove(nodeToDelete.name);
+                node.RemoveChild(nodeToDelete.name);
             }
             // For undo
             Undo.DestroyObjectImmediate(nodeToDelete);
