@@ -165,7 +165,7 @@ namespace RPG.Dialogue.Editor
 
             if (EditorGUI.EndChangeCheck())
             {
-                Undo.RecordObject(selectedDialogue, "Update Dialogue Text");
+                Undo.RecordObject(node, "Update Dialogue Text");
                 node.text = newText;
                 node.name = newID;
             }
