@@ -82,6 +82,9 @@ namespace RPG.Dialogue
             {
                 node.children.Remove(nodeToDelete.uniqueID);
             }
+            // For undo
+            Undo.DestroyObjectImmediate(nodeToDelete);
+
         }
     }
 }
