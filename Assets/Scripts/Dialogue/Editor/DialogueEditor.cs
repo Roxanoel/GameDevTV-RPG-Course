@@ -157,15 +157,9 @@ namespace RPG.Dialogue.Editor
             EditorGUI.BeginChangeCheck();
             
             EditorGUILayout.LabelField("ID");
-            string newID = EditorGUILayout.TextField($"{node.name}");
+            EditorGUILayout.TextField($"{node.name}");
             EditorGUILayout.LabelField("Text");
-            string newText = EditorGUILayout.TextField($"{node.GetText()}");
-
-            if (EditorGUI.EndChangeCheck())
-            {
-                node.UpdateText(newText);
-                node.name = newID;
-            }
+            node.UpdateText(EditorGUILayout.TextField($"{node.GetText()}"));
 
             if (GUILayout.Button("Add Child Node"))
             {
