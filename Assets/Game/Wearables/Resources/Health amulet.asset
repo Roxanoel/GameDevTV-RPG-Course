@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80cdd524cba7bbe42a5e0dc6acb3cbe8, type: 3}
+  m_Name: Health amulet
+  m_EditorClassIdentifier: 
+  itemID: b8510030-91a0-4c2c-8b5f-9675ff3723c9
+  displayName: Health amulet
+  description: As you slide the amulet around your neck, you immediately feel better.
+  icon: {fileID: 21300000, guid: 0e123cfdc54a3ca4684816a34167a566, type: 3}
+  pickup: {fileID: 3135081580122985894, guid: 7a825512ffd24dd4fa376011e03a8587, type: 3}
+  stackable: 0
+  allowedEquipLocation: 1
+  additiveModifiers: []
+  percentageModifiers:
+  - stat: 0
+    value: 5

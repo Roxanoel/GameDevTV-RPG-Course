@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c782a460693509448b15890e0aa8cc7b, type: 3}
+  m_Name: Enemy_Bow
+  m_EditorClassIdentifier: 
+  itemID: a491765b-a8e2-4d1f-9283-6510c5b16e31
+  displayName: Enemy bow
+  description: A bow for the meanies
+  icon: {fileID: 21300000, guid: 5d7061fc7da05ce44add317708ec7215, type: 3}
+  pickup: {fileID: 5282104271338322387, guid: c74e6cb709ea0ac4897d4af0f75dd787, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
+  equippedPrefab: {fileID: 8540858572124247486, guid: 34f4c3d58aeaad948a82c2d718d1529d, type: 3}
+  animatorOverride: {fileID: 22100000, guid: a35791d5c30e8b242aadea1636a207de, type: 2}
+  weaponRange: 10
+  weaponDamage: 5
+  percentageBonus: 0
+  isRightHanded: 0
+  projectile: {fileID: 2423742908311029672, guid: 9b0cfbbce6514bf46b8d13d5b8d90d42, type: 3}

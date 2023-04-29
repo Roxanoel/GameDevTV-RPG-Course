@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c782a460693509448b15890e0aa8cc7b, type: 3}
+  m_Name: Sword
+  m_EditorClassIdentifier: 
+  itemID: 09337cd0-ec41-4fb3-877b-7b476caf8211
+  displayName: Sword
+  description: The quintessential RPG weapon.
+  icon: {fileID: 21300000, guid: 5fd50594014b70e48bd6993443d46b32, type: 3}
+  pickup: {fileID: 1910446060645852210, guid: 3f0ee67be8473544ebc2fa8c6750e7fc, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
+  equippedPrefab: {fileID: 3062158822209943149, guid: 5824ba6caad05a84abf92e156c267e5e, type: 3}
+  animatorOverride: {fileID: 22100000, guid: d60eb39127e39db48a44e61d614eaf03, type: 2}
+  weaponRange: 2
+  weaponDamage: 12
+  percentageBonus: 0
+  isRightHanded: 1
+  projectile: {fileID: 0}
