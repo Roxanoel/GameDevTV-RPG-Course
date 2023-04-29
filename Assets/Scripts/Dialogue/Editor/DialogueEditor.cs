@@ -154,7 +154,6 @@ namespace RPG.Dialogue.Editor
         private void DrawNode(DialogueNode node)
         {
             GUILayout.BeginArea(node.GetRect(), nodeStyle);
-            EditorGUI.BeginChangeCheck();
             
             EditorGUILayout.LabelField("ID");
             EditorGUILayout.TextField($"{node.name}");
