@@ -7,7 +7,7 @@ using UnityEditor;
 namespace RPG.Dialogue
 {
     [CreateAssetMenu(fileName = "New Dialogue", menuName = "Dialogue")]
-    public class Dialogue : ScriptableObject
+    public class Dialogue : ScriptableObject, ISerializationCallbackReceiver
     {
         [SerializeField] List<DialogueNode> nodes = new List<DialogueNode>();
 
@@ -18,10 +18,6 @@ namespace RPG.Dialogue
         // Called whenever the SO is loaded, in the Editor only 
         private void Awake()
         {
-            if (nodes.Count < 1)
-            {
-                CreateNode(null);
-            }
 
         }
 #endif
@@ -84,6 +80,33 @@ namespace RPG.Dialogue
             }
             // For undo
             Undo.DestroyObjectImmediate(nodeToDelete);
+
+        }
+
+        public void OnBeforeSerialize()
+        {
+            // Before saving, ensure there is always at least one node
+            if (nodes.Count < 1)
+            {
+                CreateNode(null);
+            }
+
+            // Check if this dialogue exists as an asset yet
+            if (AssetDatabase.GetAssetPath(this) != "")
+            {
+                foreach (DialogueNode node in GetAllNodes())
+                {
+                    if (AssetDatabase.GetAssetPath(node) == "")
+                    {
+                        // Register new node in the asset database (for saving properly)
+                        AssetDatabase.AddObjectToAsset(node, this);
+                    }
+                }
+            }
+        }
+
+        public void OnAfterDeserialize()
+        {
 
         }
     }
