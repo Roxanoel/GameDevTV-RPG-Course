@@ -31,7 +31,7 @@ namespace RPG.Dialogue
             nodeLookup.Clear();
             foreach (DialogueNode node in GetAllNodes() )
             {
-                nodeLookup[node.name] = node;
+                nodeLookup[node.uniqueID] = node;
             }
         }
 
