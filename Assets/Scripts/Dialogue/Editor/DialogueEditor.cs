@@ -118,6 +118,8 @@ namespace RPG.Dialogue.Editor
                 if (draggingNode != null)
                 {
                     draggingOffset = draggingNode.rect.position - Event.current.mousePosition;
+                    // Changing the selection
+                    Selection.activeObject = draggingNode;
                 }
                 // Dragging the canvas 
                 else

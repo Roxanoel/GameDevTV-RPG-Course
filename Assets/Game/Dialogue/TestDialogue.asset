@@ -10,15 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92d1c0db891514741b2196183e13314c, type: 3}
-  m_Name: Sample dialogue 2
+  m_Name: TestDialogue
   m_EditorClassIdentifier: 
   nodes:
-  - uniqueID: sample1
-    text: hELLO
-    children: []
-  - uniqueID: sample2
-    text: Hello.
-    children: []
-  - uniqueID: sample3
-    text: bye
-    children: []
+  - {fileID: 0}

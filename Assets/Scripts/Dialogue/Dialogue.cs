@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 namespace RPG.Dialogue
 {
@@ -19,9 +20,7 @@ namespace RPG.Dialogue
         {
             if (nodes.Count < 1)
             {
-                DialogueNode rootNode = new DialogueNode();
-                rootNode.uniqueID = Guid.NewGuid().ToString();
-                nodes.Add(rootNode);
+                CreateNode(null);
             }
 
         }
@@ -32,7 +31,7 @@ namespace RPG.Dialogue
             nodeLookup.Clear();
             foreach (DialogueNode node in GetAllNodes() )
             {
-                nodeLookup[node.uniqueID] = node;
+                nodeLookup[node.name] = node;
             }
         }
 
@@ -59,9 +58,12 @@ namespace RPG.Dialogue
 
         public void CreateNode(DialogueNode parent)
         {
-            DialogueNode newNode = new DialogueNode();
+            DialogueNode newNode = CreateInstance<DialogueNode>();
             newNode.uniqueID = Guid.NewGuid().ToString();
-            parent.children.Add(newNode.uniqueID);
+            if (parent != null)
+            {
+                parent.children.Add(newNode.uniqueID);
+            }
             nodes.Add(newNode);
             OnValidate();
         }
