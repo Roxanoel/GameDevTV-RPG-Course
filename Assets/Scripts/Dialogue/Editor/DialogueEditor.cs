@@ -185,7 +185,6 @@ namespace RPG.Dialogue.Editor
                 {
                     if (GUILayout.Button("Unlink Child"))
                     {
-                        Undo.RecordObject(selectedDialogue, "Add Dialogue Link");
                         linkingParentNode.RemoveChild(node.name);
                         linkingParentNode = null;
                     }
@@ -193,7 +192,6 @@ namespace RPG.Dialogue.Editor
                 else if
                 (GUILayout.Button("Select as Child"))
                 {
-                    Undo.RecordObject(selectedDialogue, "Add Dialogue Link");
                     linkingParentNode.AddChild(node.name);
                     linkingParentNode = null;
                 }

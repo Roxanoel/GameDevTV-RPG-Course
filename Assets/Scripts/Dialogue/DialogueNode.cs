@@ -35,10 +35,12 @@ namespace RPG.Dialogue
         }
         public void AddChild(string nodeName)
         {
+            Undo.RecordObject(this, "Add Dialogue Link");
             children.Add(nodeName);
         }
         public void RemoveChild(string nodeName)
         {
+            Undo.RecordObject(this, "Remove Dialogue Link");
             children.Remove(nodeName);
         }
 #if UNITY_EDITOR
