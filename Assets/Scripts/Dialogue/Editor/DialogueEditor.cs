@@ -189,12 +189,12 @@ namespace RPG.Dialogue.Editor
                         linkingParentNode = null;
                     }
                 }
-                else if  (linkingParentNode.children.Contains(node.name))
+                else if  (linkingParentNode.GetChildren().Contains(node.name))
                 {
                     if (GUILayout.Button("Unlink Child"))
                     {
                         Undo.RecordObject(selectedDialogue, "Add Dialogue Link");
-                        linkingParentNode.children.Remove(node.name);
+                        linkingParentNode.RemoveChild(node.name);
                         linkingParentNode = null;
                     }
                 }
@@ -202,7 +202,7 @@ namespace RPG.Dialogue.Editor
                 (GUILayout.Button("Select as Child"))
                 {
                     Undo.RecordObject(selectedDialogue, "Add Dialogue Link");
-                    linkingParentNode.children.Add(node.name);
+                    linkingParentNode.AddChild(node.name);
                     linkingParentNode = null;
                 }
             }

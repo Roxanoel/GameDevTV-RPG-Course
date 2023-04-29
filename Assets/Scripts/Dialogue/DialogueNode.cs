@@ -24,5 +24,17 @@ namespace RPG.Dialogue
             return rect;
         }
         // Setters
+        public void UpdateText(string newText)
+        {
+            text = newText;
+        }
+        public void AddChild(string nodeName)
+        {
+            children.Add(nodeName);
+        }
+        public void RemoveChild(string nodeName)
+        {
+            children.Remove(nodeName);
+        }
     }
 }
