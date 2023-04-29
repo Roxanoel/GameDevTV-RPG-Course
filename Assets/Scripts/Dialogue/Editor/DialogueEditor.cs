@@ -115,7 +115,7 @@ namespace RPG.Dialogue.Editor
                 draggingNode = GetNodeAtPoint(Event.current.mousePosition);
                 if (draggingNode != null)
                 {
-                    draggingOffset = draggingNode.rect.position - Event.current.mousePosition;
+                    draggingOffset = draggingNode.GetRect().position - Event.current.mousePosition;
                     // Changing the selection
                     Selection.activeObject = draggingNode;
                 }
@@ -131,7 +131,7 @@ namespace RPG.Dialogue.Editor
             else if (Event.current.type == EventType.MouseDrag && draggingNode != null)
             {
                 Undo.RecordObject(selectedDialogue, "Move Dialogue Node");
-                draggingNode.rect.position = Event.current.mousePosition + draggingOffset;
+                draggingNode.SetRectPosition(Event.current.mousePosition + draggingOffset);
 
                 GUI.changed = true;
             }
@@ -153,7 +153,7 @@ namespace RPG.Dialogue.Editor
 
         private void DrawNode(DialogueNode node)
         {
-            GUILayout.BeginArea(node.rect, nodeStyle);
+            GUILayout.BeginArea(node.GetRect(), nodeStyle);
             EditorGUI.BeginChangeCheck();
             
             EditorGUILayout.LabelField("ID");
@@ -218,11 +218,11 @@ namespace RPG.Dialogue.Editor
 
         private void DrawConnections(DialogueNode node)
         {
-            Vector3 startPosition = new Vector3(node.rect.xMax, node.rect.center.y, 0);
+            Vector3 startPosition = new Vector3(node.GetRect().xMax, node.GetRect().center.y, 0);
 
             foreach (DialogueNode childNode in selectedDialogue.GetAllChildren(node))
             {
-                Vector3 endPosition = new Vector3(childNode.rect.xMin, childNode.rect.center.y, 0);
+                Vector3 endPosition = new Vector3(childNode.GetRect().xMin, childNode.GetRect().center.y, 0);
                 Vector3 controlPointOffset = endPosition - startPosition;
                 controlPointOffset.y = 0;
                 controlPointOffset.x *= 0.8f;
@@ -243,7 +243,7 @@ namespace RPG.Dialogue.Editor
 
             foreach (DialogueNode node in selectedDialogue.GetAllNodes())
             {
-                if (node.rect.Contains(adjustedPoint))
+                if (node.GetRect().Contains(adjustedPoint))
                 {
                     // Ensures the node that will be returned is the top-most one
                     foundNode = node;
