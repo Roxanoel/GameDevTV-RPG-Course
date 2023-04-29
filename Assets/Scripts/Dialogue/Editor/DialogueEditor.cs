@@ -159,12 +159,12 @@ namespace RPG.Dialogue.Editor
             EditorGUILayout.LabelField("ID");
             string newID = EditorGUILayout.TextField($"{node.name}");
             EditorGUILayout.LabelField("Text");
-            string newText = EditorGUILayout.TextField($"{node.text}");
+            string newText = EditorGUILayout.TextField($"{node.GetText()}");
 
             if (EditorGUI.EndChangeCheck())
             {
                 Undo.RecordObject(node, "Update Dialogue Text");
-                node.text = newText;
+                node.UpdateText(newText);
                 node.name = newID;
             }
 
