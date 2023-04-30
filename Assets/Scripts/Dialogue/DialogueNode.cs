@@ -25,6 +25,11 @@ namespace RPG.Dialogue
         {
             return rect;
         }
+
+        public bool IsPlayerSpeaking()
+        {
+            return isPlayerSpeaking;
+        }
         // Setters
         public void UpdateText(string newText)
         {
