@@ -24,6 +24,7 @@ namespace RPG.Dialogue.Editor
         [NonSerialized] Vector2 draggingCanvasOffset;
 
         [NonSerialized] GUIStyle nodeStyle;
+        [NonSerialized] GUIStyle playerNodeStyle;
         
         [MenuItem("Window/Dialogue Editor")]
         public static void ShowEditorWindow()
@@ -47,10 +48,16 @@ namespace RPG.Dialogue.Editor
         {
             Selection.selectionChanged += OnSelectionChanged;
 
+            // Style for the NPC nodes
             nodeStyle = new GUIStyle();
             nodeStyle.normal.background = EditorGUIUtility.Load("node0") as Texture2D;
             nodeStyle.padding = new RectOffset(24, 24, 24, 24);
             nodeStyle.border = new RectOffset(12, 12, 12, 12);
+            // Style for the player nodes
+            playerNodeStyle = new GUIStyle();
+            playerNodeStyle.normal.background = EditorGUIUtility.Load("node1") as Texture2D;
+            playerNodeStyle.padding = new RectOffset(24, 24, 24, 24);
+            playerNodeStyle.border = new RectOffset(12, 12, 12, 12);
         }
 
         private void OnSelectionChanged()
@@ -152,7 +159,14 @@ namespace RPG.Dialogue.Editor
 
         private void DrawNode(DialogueNode node)
         {
-            GUILayout.BeginArea(node.GetRect(), nodeStyle);
+            // Determining style to use 
+            GUIStyle style = nodeStyle; // defaults to NPC node style
+            if (node.IsPlayerSpeaking() == true)
+            {
+                style = playerNodeStyle;
+            }
+            // Apply correct style
+            GUILayout.BeginArea(node.GetRect(), style);
             
             EditorGUILayout.LabelField("ID");
             EditorGUILayout.TextField($"{node.name}");
