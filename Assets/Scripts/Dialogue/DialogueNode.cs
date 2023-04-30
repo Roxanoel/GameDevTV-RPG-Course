@@ -31,23 +31,27 @@ namespace RPG.Dialogue
             {
                 Undo.RecordObject(this, "Update Dialogue Text");
                 text = newText;
+                EditorUtility.SetDirty(this);
             }
         }
         public void AddChild(string nodeName)
         {
             Undo.RecordObject(this, "Add Dialogue Link");
             children.Add(nodeName);
+            EditorUtility.SetDirty(this);
         }
         public void RemoveChild(string nodeName)
         {
             Undo.RecordObject(this, "Remove Dialogue Link");
             children.Remove(nodeName);
+            EditorUtility.SetDirty(this);
         }
 #if UNITY_EDITOR
         public void SetRectPosition(Vector2 newPosition)
         {
             Undo.RecordObject(this, "Move Dialogue Node");
             rect.position = newPosition;
+            EditorUtility.SetDirty(this);
         }
 #endif
     }
