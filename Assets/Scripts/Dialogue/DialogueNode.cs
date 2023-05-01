@@ -52,6 +52,10 @@ namespace RPG.Dialogue
             children.Remove(nodeName);
             EditorUtility.SetDirty(this);
         }
+        public void SetIsPlayerSpeaking(bool value)
+        {
+            isPlayerSpeaking = value;
+        }
 #if UNITY_EDITOR
         public void SetRectPosition(Vector2 newPosition)
         {

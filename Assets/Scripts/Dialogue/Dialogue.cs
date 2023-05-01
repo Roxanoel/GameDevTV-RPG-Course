@@ -55,6 +55,8 @@ namespace RPG.Dialogue
             if (parent != null)
             {
                 parent.AddChild(newNode.name);
+                // To alternate between player & AI responses 
+                newNode.SetIsPlayerSpeaking(!parent.IsPlayerSpeaking());
             }
             if (AssetDatabase.GetAssetPath(this) != "")
             {
