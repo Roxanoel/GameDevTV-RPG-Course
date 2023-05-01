@@ -10,6 +10,7 @@ namespace RPG.Dialogue
     public class Dialogue : ScriptableObject, ISerializationCallbackReceiver
     {
         [SerializeField] List<DialogueNode> nodes = new List<DialogueNode>();
+        [SerializeField] Vector2 newNodeOffset = new Vector2(250, 0);
 
         Dictionary<string, DialogueNode> nodeLookup = new Dictionary<string, DialogueNode>();
 
@@ -57,6 +58,8 @@ namespace RPG.Dialogue
                 parent.AddChild(newNode.name);
                 // To alternate between player & AI responses 
                 newNode.SetIsPlayerSpeaking(!parent.IsPlayerSpeaking());
+                // Offset node position in relation to parent 
+                newNode.SetRectPosition(parent.GetRect().position + newNodeOffset);
             }
             if (AssetDatabase.GetAssetPath(this) != "")
             {
