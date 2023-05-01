@@ -54,7 +54,9 @@ namespace RPG.Dialogue
         }
         public void SetIsPlayerSpeaking(bool value)
         {
+            Undo.RecordObject(this, "Change dialogue speaker");
             isPlayerSpeaking = value;
+            EditorUtility.SetDirty(this);
         }
 #if UNITY_EDITOR
         public void SetRectPosition(Vector2 newPosition)
