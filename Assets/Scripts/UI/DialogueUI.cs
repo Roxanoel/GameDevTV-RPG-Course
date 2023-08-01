@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Dialogue;
+using TMPro;
 
 namespace RPG.UI
 {
     public class DialogueUI : MonoBehaviour
     {
         PlayerConversant playerConversant;
+        [SerializeField] TextMeshProUGUI AIText;
 
         void Start()
         {
