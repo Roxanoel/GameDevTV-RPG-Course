@@ -13,7 +13,10 @@ namespace RPG.UI
 
         void Start()
         {
+            // Get reference to playerConversant
             playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
+            // Set the text in the UI based on dialogue nodes
+            AIText.text = playerConversant.GetText();
         }
 
         // Update is called once per frame

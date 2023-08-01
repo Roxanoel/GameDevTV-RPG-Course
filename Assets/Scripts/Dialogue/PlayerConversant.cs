@@ -8,16 +8,19 @@ namespace RPG.Dialogue
     {
         [SerializeField] Dialogue currentDialogue; // In the future this will be changed/set programmatically
 
-        // Start is called before the first frame update
         void Start()
         {
         
         }
 
-        // Update is called once per frame
         void Update()
         {
         
+        }
+
+        public string GetText()
+        {
+            return currentDialogue.GetRootNode().GetText(); // Currently hardcoded but eventually make the function more flexible to return text of desired node
         }
     }
 }
