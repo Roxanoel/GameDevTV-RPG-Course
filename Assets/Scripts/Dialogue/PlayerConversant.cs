@@ -20,6 +20,11 @@ namespace RPG.Dialogue
 
         public string GetText()
         {
+            // safeguard 
+            if (currentDialogue == null)
+            {
+                return "";
+            }
             return currentDialogue.GetRootNode().GetText(); // Currently hardcoded but eventually make the function more flexible to return text of desired node
         }
     }
