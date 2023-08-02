@@ -32,6 +32,8 @@ namespace RPG.UI
         private void UpdateUI()
         {
             AIText.text = playerConversant.GetText();
+            // Only show Next button if there are children nodes left after current one
+            nextButton.gameObject.SetActive(playerConversant.HasNext());
         }
     }
 }
