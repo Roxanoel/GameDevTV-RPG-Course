@@ -37,7 +37,7 @@ namespace RPG.Dialogue
         // Tells you if you have reached a leaf node of the dialogue tree
         public bool HasNext()
         {
-            return true; // temp so that it compiles
+            return currentDialogue.GetAllChildren(currentNode).Count() > 0;
         }
     }
 }
