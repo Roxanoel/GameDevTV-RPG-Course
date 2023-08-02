@@ -12,6 +12,8 @@ namespace RPG.UI
         PlayerConversant playerConversant;
         [SerializeField] TextMeshProUGUI AIText;
         [SerializeField] Button nextButton;
+        [SerializeField] Transform repliesRoot;
+        [SerializeField] GameObject replyPrefab;
 
         void Start()
         {
@@ -34,6 +36,17 @@ namespace RPG.UI
             AIText.text = playerConversant.GetText();
             // Only show Next button if there are children nodes left after current one
             nextButton.gameObject.SetActive(playerConversant.HasNext());
+            // Clear replies
+            foreach (Transform item in repliesRoot)
+            {
+                Destroy(item.gameObject);
+            }
+            // Update replies based on PlayerConversant
+            foreach (string replyText in playerConversant.GetChoices())
+            {
+                GameObject reply = Instantiate(replyPrefab, repliesRoot);
+                reply.GetComponentInChildren<TextMeshProUGUI>().text = replyText;
+            }
         }
     }
 }

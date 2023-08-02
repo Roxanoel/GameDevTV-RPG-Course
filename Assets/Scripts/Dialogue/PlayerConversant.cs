@@ -39,6 +39,13 @@ namespace RPG.Dialogue
         {
             return currentDialogue.GetAllChildren(currentNode).Count() > 0;
         }
+
+        public IEnumerable<string> GetChoices()
+        {
+            yield return "mock reply 1";
+            yield return "mock reply 2!!";
+            yield return "last mock reply, woof";
+        }
     }
 }
 
