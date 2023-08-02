@@ -8,16 +8,6 @@ namespace RPG.Dialogue
     {
         [SerializeField] Dialogue currentDialogue; // In the future this will be changed/set programmatically
 
-        void Start()
-        {
-        
-        }
-
-        void Update()
-        {
-        
-        }
-
         public string GetText()
         {
             // safeguard 
@@ -25,7 +15,19 @@ namespace RPG.Dialogue
             {
                 return "";
             }
-            return currentDialogue.GetRootNode().GetText(); // Currently hardcoded but eventually make the function more flexible to return text of desired node
+            return currentDialogue.GetRootNode().GetText(); // Currently hardcoded but eventually could make the function more flexible to return text of desired node
+        }
+
+        // Called when we want to progress the dialogue 
+        public void Next()
+        {
+
+        }
+
+        // Tells you if you have reached a leaf node of the dialogue tree
+        public bool HasNext()
+        {
+            return true; // temp so that it compiles
         }
     }
 }
