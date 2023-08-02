@@ -30,8 +30,8 @@ namespace RPG.Dialogue
         public void Next()
         {
             DialogueNode[] children = currentDialogue.GetAllChildren(currentNode).ToArray();
-            // For now, always using the first child
-            currentNode = children[0];
+            // For now, returning a random child node 
+            currentNode = children[Random.Range(0, children.Length)];
         }
 
         // Tells you if you have reached a leaf node of the dialogue tree
