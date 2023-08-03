@@ -9,11 +9,17 @@ namespace RPG.Dialogue
     {
         [SerializeField] Dialogue currentDialogue; // In the future this will be changed/set programmatically
         DialogueNode currentNode = null;
+        bool showingReplies = false;
 
         private void Awake()
         {
             // Initialise currentNode as root node of current dialogue
             currentNode = currentDialogue.GetRootNode();
+        }
+
+        public bool ShowingReplies()
+        {
+            return currentDialogue.GetPlayerChildren(currentNode).Count() > 0;  
         }
 
         public string GetText()
@@ -29,7 +35,7 @@ namespace RPG.Dialogue
         // Called when we want to progress the dialogue 
         public void Next()
         {
-            DialogueNode[] children = currentDialogue.GetAllChildren(currentNode).ToArray();
+            DialogueNode[] children = currentDialogue.GetAIChildren(currentNode).ToArray();
             // For now, returning a random child node 
             currentNode = children[Random.Range(0, children.Length)];
         }
@@ -37,7 +43,7 @@ namespace RPG.Dialogue
         // Tells you if you have reached a leaf node of the dialogue tree
         public bool HasNext()
         {
-            return currentDialogue.GetAllChildren(currentNode).Count() > 0;
+            return currentDialogue.GetAIChildren(currentNode).Count() > 0;
         }
 
         public IEnumerable<string> GetChoices()
