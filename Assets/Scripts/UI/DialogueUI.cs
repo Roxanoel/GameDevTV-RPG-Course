@@ -34,19 +34,29 @@ namespace RPG.UI
         private void UpdateUI()
         {
             AIText.text = playerConversant.GetText();
-            // Only show Next button if there are children nodes left after current one
-            nextButton.gameObject.SetActive(playerConversant.HasNext());
+
             // Clear replies
             foreach (Transform item in repliesRoot)
             {
                 Destroy(item.gameObject);
             }
-            // Update replies based on PlayerConversant
-            foreach (string replyText in playerConversant.GetChoices())
+
+            if (playerConversant.ShowingReplies())
             {
-                GameObject reply = Instantiate(replyPrefab, repliesRoot);
-                reply.GetComponentInChildren<TextMeshProUGUI>().text = replyText;
+                // Only show replies if ShowingReplies is true
+                repliesRoot.gameObject.SetActive(playerConversant.ShowingReplies());
+
+                // Update replies based on PlayerConversant
+                foreach (string replyText in playerConversant.GetChoices())
+                {
+                    GameObject reply = Instantiate(replyPrefab, repliesRoot);
+                    reply.GetComponentInChildren<TextMeshProUGUI>().text = replyText;
+                }
             }
+
+            // Only show Next button if there are children nodes left after current one, and there are no replies
+            nextButton.gameObject.SetActive(playerConversant.HasNext() && !playerConversant.ShowingReplies());
+           
         }
     }
 }
