@@ -48,9 +48,10 @@ namespace RPG.Dialogue
 
         public IEnumerable<string> GetChoices()
         {
-            yield return "mock reply 1";
-            yield return "mock reply 2!!";
-            yield return "last mock reply, woof";
+            foreach (DialogueNode childNode in currentDialogue.GetPlayerChildren(currentNode))
+            {
+                yield return childNode.GetText();
+            }
         }
     }
 }

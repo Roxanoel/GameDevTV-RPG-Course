@@ -83,7 +83,29 @@ MonoBehaviour:
   - {fileID: 2932672311059234553}
   - {fileID: -843424152917775244}
   - {fileID: -96108842028040801}
+  - {fileID: 630911682673974285}
   newNodeOffset: {x: 250, y: 0}
+--- !u!114 &630911682673974285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda9a41a282295d4ea4d79480b0b2b06, type: 3}
+  m_Name: e14e744b-f0c2-41db-afa2-ded544e602b8
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: An alternate reply you can choose
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 254
+    y: 356
+    width: 200
+    height: 200
 --- !u!114 &2932672311059234553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +145,7 @@ MonoBehaviour:
     should start
   children:
   - 95ae5576-d693-4c87-b637-bc69f76431d6
+  - e14e744b-f0c2-41db-afa2-ded544e602b8
   rect:
     serializedVersion: 2
     x: 0
