@@ -47,10 +47,10 @@ namespace RPG.UI
                 repliesRoot.gameObject.SetActive(playerConversant.ShowingReplies());
 
                 // Update replies based on PlayerConversant
-                foreach (string replyText in playerConversant.GetChoices())
+                foreach (DialogueNode reply in playerConversant.GetChoices())
                 {
-                    GameObject reply = Instantiate(replyPrefab, repliesRoot);
-                    reply.GetComponentInChildren<TextMeshProUGUI>().text = replyText;
+                    GameObject replyInstance = Instantiate(replyPrefab, repliesRoot);
+                    replyInstance.GetComponentInChildren<TextMeshProUGUI>().text = reply.GetText();
                 }
             }
 

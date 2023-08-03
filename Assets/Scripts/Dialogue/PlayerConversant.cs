@@ -46,12 +46,9 @@ namespace RPG.Dialogue
             return currentDialogue.GetAIChildren(currentNode).Count() > 0;
         }
 
-        public IEnumerable<string> GetChoices()
+        public IEnumerable<DialogueNode> GetChoices()
         {
-            foreach (DialogueNode childNode in currentDialogue.GetPlayerChildren(currentNode))
-            {
-                yield return childNode.GetText();
-            }
+            return currentDialogue.GetPlayerChildren(currentNode);
         }
     }
 }
