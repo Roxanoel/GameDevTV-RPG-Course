@@ -50,6 +50,14 @@ namespace RPG.Dialogue
         {
             return currentDialogue.GetPlayerChildren(currentNode);
         }
+
+        public void SelectChoice(DialogueNode chosenNode)
+        {
+            // Update currentNode
+            currentNode = chosenNode;
+            // Don't display the text of the selected node again
+            Next();
+        }
     }
 }
 

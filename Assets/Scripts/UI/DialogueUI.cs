@@ -31,7 +31,7 @@ namespace RPG.UI
             UpdateUI();
         }
 
-        private void BuildChoiceList()
+        private void BuildChoiceList()    // In the course, reply = choice, and ShowingReplies = IsChoosing
         {
             // Only show replies if ShowingReplies is true
             repliesRoot.gameObject.SetActive(playerConversant.ShowingReplies());
@@ -41,6 +41,12 @@ namespace RPG.UI
             {
                 GameObject replyInstance = Instantiate(replyPrefab, repliesRoot);
                 replyInstance.GetComponentInChildren<TextMeshProUGUI>().text = reply.GetText();
+                // Get a hold of the button component 
+                Button button = replyInstance.GetComponentInChildren<Button>();
+                button.onClick.AddListener(() => {
+                    playerConversant.SelectChoice(reply);
+                    UpdateUI(); // Won't that cause a loop? If not, how so?
+                });
             }
         }
 
