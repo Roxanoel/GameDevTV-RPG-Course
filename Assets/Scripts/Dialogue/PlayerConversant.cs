@@ -12,21 +12,17 @@ namespace RPG.Dialogue
         DialogueNode currentNode = null;
         bool showingReplies = false;
 
-        private void Awake()
+        private IEnumerator Start()
         {
-            // Initialise currentNode as root node of current dialogue
-            currentNode = currentDialogue.GetRootNode();
-        }
-
-        private IEnumerator StartWithDelay(int delayInSeconds)
-        {
-            yield return new WaitForSeconds(delayInSeconds);
+            yield return new WaitForSeconds(2);
             StartDialogue(testDialogue);
         }
 
         public void StartDialogue(Dialogue newDialogue)
         {
-
+            currentDialogue = newDialogue;
+            // Initialise currentNode as root node of current dialogue
+            currentNode = currentDialogue.GetRootNode();
         }
 
         public bool ShowingReplies()
