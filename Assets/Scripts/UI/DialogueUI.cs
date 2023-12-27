@@ -31,6 +31,19 @@ namespace RPG.UI
             UpdateUI();
         }
 
+        private void BuildChoiceList()
+        {
+            // Only show replies if ShowingReplies is true
+            repliesRoot.gameObject.SetActive(playerConversant.ShowingReplies());
+
+            // Update replies based on PlayerConversant
+            foreach (DialogueNode reply in playerConversant.GetChoices())
+            {
+                GameObject replyInstance = Instantiate(replyPrefab, repliesRoot);
+                replyInstance.GetComponentInChildren<TextMeshProUGUI>().text = reply.GetText();
+            }
+        }
+
         private void UpdateUI()
         {
             AIText.text = playerConversant.GetText();
@@ -43,15 +56,7 @@ namespace RPG.UI
 
             if (playerConversant.ShowingReplies())
             {
-                // Only show replies if ShowingReplies is true
-                repliesRoot.gameObject.SetActive(playerConversant.ShowingReplies());
-
-                // Update replies based on PlayerConversant
-                foreach (DialogueNode reply in playerConversant.GetChoices())
-                {
-                    GameObject replyInstance = Instantiate(replyPrefab, repliesRoot);
-                    replyInstance.GetComponentInChildren<TextMeshProUGUI>().text = reply.GetText();
-                }
+                BuildChoiceList();
             }
 
             // Only show Next button if there are children nodes left after current one, and there are no replies
