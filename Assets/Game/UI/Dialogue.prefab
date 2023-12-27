@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AIText: {fileID: 3749447605972982085}
   nextButton: {fileID: 7398900327219501459}
+  quitButton: {fileID: 4067081347894089787}
   repliesRoot: {fileID: 260493185781141648}
   replyPrefab: {fileID: 3873732741584226868, guid: c99d5437d79f5094e9cfa889e7eb15dd, type: 3}
 --- !u!1 &3365721126994536068

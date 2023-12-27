@@ -12,6 +12,7 @@ namespace RPG.UI
         PlayerConversant playerConversant;
         [SerializeField] TextMeshProUGUI AIText;
         [SerializeField] Button nextButton;
+        [SerializeField] Button quitButton;
         [SerializeField] Transform repliesRoot;
         [SerializeField] GameObject replyPrefab;
 
@@ -23,6 +24,8 @@ namespace RPG.UI
             playerConversant.onConversationUpdated += UpdateUI;
             // Setting up event for button click
             nextButton.onClick.AddListener(Next);
+            // Setting up quit button
+            quitButton.onClick.AddListener(playerConversant.Quit);
 
             UpdateUI();
         }

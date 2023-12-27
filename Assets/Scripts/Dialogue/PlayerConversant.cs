@@ -35,6 +35,14 @@ namespace RPG.Dialogue
             return currentDialogue != null;
         }
 
+        public void Quit()
+        {
+            currentDialogue = null;
+            currentNode = null;
+            showingReplies = false;
+            onConversationUpdated();
+        }
+
         public bool ShowingReplies()
         {
             return currentDialogue.GetPlayerChildren(currentNode).Count() > 0;  
