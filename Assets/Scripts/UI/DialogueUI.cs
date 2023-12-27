@@ -52,6 +52,8 @@ namespace RPG.UI
 
         private void UpdateUI()
         {
+            gameObject.SetActive(playerConversant.IsActive());
+            
             // If there is no dialogue selected, do nothing
             if (!playerConversant.IsActive())
             {
