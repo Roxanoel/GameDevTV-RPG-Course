@@ -19,6 +19,8 @@ namespace RPG.UI
         {
             // Get reference to playerConversant
             playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
+            // Setting up event listener for conversation changes
+            playerConversant.onConversationUpdated += UpdateUI;
             // Setting up event for button click
             nextButton.onClick.AddListener(Next);
 
@@ -28,7 +30,6 @@ namespace RPG.UI
         void Next()
         {
             playerConversant.Next();
-            UpdateUI();
         }
 
         private void BuildChoiceList()    // In the course, reply = choice, and ShowingReplies = IsChoosing
@@ -45,13 +46,18 @@ namespace RPG.UI
                 Button button = replyInstance.GetComponentInChildren<Button>();
                 button.onClick.AddListener(() => {
                     playerConversant.SelectChoice(reply);
-                    UpdateUI(); // Won't that cause a loop? If not, how so?
                 });
             }
         }
 
         private void UpdateUI()
         {
+            // If there is no dialogue selected, do nothing
+            if (!playerConversant.IsActive())
+            {
+                return;
+            }
+            
             AIText.text = playerConversant.GetText();
 
             // Clear replies
