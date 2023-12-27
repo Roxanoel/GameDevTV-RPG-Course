@@ -7,7 +7,8 @@ namespace RPG.Dialogue
 {
     public class PlayerConversant : MonoBehaviour
     {
-        [SerializeField] Dialogue currentDialogue; // In the future this will be changed/set programmatically
+        [SerializeField] Dialogue testDialogue;
+        Dialogue currentDialogue; // In the future this will be changed/set programmatically
         DialogueNode currentNode = null;
         bool showingReplies = false;
 
@@ -15,6 +16,17 @@ namespace RPG.Dialogue
         {
             // Initialise currentNode as root node of current dialogue
             currentNode = currentDialogue.GetRootNode();
+        }
+
+        private IEnumerator StartWithDelay(int delayInSeconds)
+        {
+            yield return new WaitForSeconds(delayInSeconds);
+            StartDialogue(testDialogue);
+        }
+
+        public void StartDialogue(Dialogue newDialogue)
+        {
+
         }
 
         public bool ShowingReplies()
