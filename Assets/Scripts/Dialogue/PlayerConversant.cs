@@ -15,12 +15,6 @@ namespace RPG.Dialogue
 
         public event Action onConversationUpdated;
 
-        private IEnumerator Start()
-        {
-            yield return new WaitForSeconds(2);
-            StartDialogue(testDialogue);
-        }
-
         public void StartDialogue(Dialogue newDialogue)
         {
             currentDialogue = newDialogue;
