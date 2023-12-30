@@ -3,15 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Control;
 
-public class AIConversant : MonoBehaviour, IRaycastable
-{
-    public CursorType GetCursorType()
+namespace RPG.Dialogue
+{   
+    public class AIConversant : MonoBehaviour, IRaycastable
     {
-        return CursorType.Dialogue;
-    }
+        [SerializeField] Dialogue dialogue;
+        PlayerConversant playerConversant;
 
-    public bool HandleRaycast(PlayerController callingController)
-    {
-        return true;
+        private void Start()
+        {
+            playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
+        }
+
+        public CursorType GetCursorType()
+        {
+            return CursorType.Dialogue;
+        }
+
+        public bool HandleRaycast(PlayerController callingController)
+        {
+            if (Input.GetMouseButtonDown(0) && dialogue != null)
+            {
+                playerConversant.StartDialogue(dialogue);
+            }
+            return true;
+        }
     }
 }
