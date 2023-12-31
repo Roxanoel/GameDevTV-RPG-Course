@@ -11,6 +11,8 @@ namespace RPG.Dialogue
         [SerializeField] string text;
         [SerializeField] List<string> children = new List<string>();
         [SerializeField] Rect rect = new Rect(0, 0, 200, 200);
+        [SerializeField] string onEnterAction;
+        [SerializeField] string onExitAction; // Could be extended to an array of strings if I wanted many actions
 
         // Getters 
         public string GetText()
@@ -29,6 +31,16 @@ namespace RPG.Dialogue
         public bool IsPlayerSpeaking()
         {
             return isPlayerSpeaking;
+        }
+
+        public string GetOnEnterAction()
+        {
+            return onEnterAction;
+        }
+
+        public string GetOnExitAction()
+        {
+            return onExitAction;
         }
         // Setters
         public void UpdateText(string newText)

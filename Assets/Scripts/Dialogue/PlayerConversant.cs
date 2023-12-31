@@ -20,6 +20,9 @@ namespace RPG.Dialogue
             currentDialogue = newDialogue;
             // Initialise currentNode as root node of current dialogue
             currentNode = currentDialogue.GetRootNode();
+            // Enter & exit
+            currentNode.GetOnEnterAction();
+            currentNode.GetOnExitAction();
             // Trigger event
             onConversationUpdated();
         }
@@ -31,6 +34,8 @@ namespace RPG.Dialogue
 
         public void Quit()
         {
+            TriggerExitAction();
+
             currentDialogue = null;
             currentNode = null;
             showingReplies = false;
@@ -62,9 +67,12 @@ namespace RPG.Dialogue
                 return;
             }
             DialogueNode[] children = currentDialogue.GetAIChildren(currentNode).ToArray();
+            // Trigger exist action before changing the node
+            TriggerExitAction();
             // For now, returning a random child node 
             currentNode = children[UnityEngine.Random.Range(0, children.Length)];
-            // trigger event
+            // trigger event + enter action
+            TriggerEnterAction();
             onConversationUpdated();
         }
 
@@ -83,8 +91,25 @@ namespace RPG.Dialogue
         {
             // Update currentNode
             currentNode = chosenNode;
+            // Trigger enter action
+            TriggerEnterAction();
             // Don't display the text of the selected node again
             Next();
+        }
+
+        private void TriggerEnterAction()
+        {
+            if (currentNode != null)
+            {
+                Debug.Log(currentNode.GetOnEnterAction());
+            }
+        }
+        private void TriggerExitAction()
+        {
+            if (currentNode != null)
+            {
+                Debug.Log(currentNode.GetOnExitAction());
+            }
         }
     }
 }
