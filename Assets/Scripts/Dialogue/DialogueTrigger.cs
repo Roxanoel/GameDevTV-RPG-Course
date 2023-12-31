@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RPG.Dialogue
 {
     public class DialogueTrigger : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        [SerializeField] string action;
+        [SerializeField] UnityEvent onTrigger;
+
+        public void Trigger(string actionToTrigger)
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            if (actionToTrigger == action)
+            {
+                onTrigger.Invoke();
+            }
         }
     }
 }

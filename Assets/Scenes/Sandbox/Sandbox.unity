@@ -10214,7 +10214,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9500713, y: 1}
+    m_SensorSize: {x: 1.9434339, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10230,7 +10230,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690466062}
-  m_LocalRotation: {x: 0.19208051, y: 0.005789514, z: -0.0011331737, w: 0.98136145}
+  m_LocalRotation: {x: 0.19208054, y: 0.0057895505, z: -0.0011331808, w: 0.98136145}
   m_LocalPosition: {x: -20.74, y: 3.67, z: -33.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11988,7 +11988,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962486994}
-  m_LocalRotation: {x: -0.076116376, y: 0.08201661, z: 0.006282385, w: 0.9937002}
+  m_LocalRotation: {x: -0.0761164, y: 0.08201657, z: 0.0062823836, w: 0.9937002}
   m_LocalPosition: {x: 14.1, y: 6.6913013, z: 20.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12025,7 +12025,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9500713, y: 1}
+    m_SensorSize: {x: 1.9434339, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12279,7 +12279,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9500713, y: 1}
+    m_SensorSize: {x: 1.9434339, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -13612,6 +13612,45 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6696799868187805505, guid: daa10695c06ce0d479caf181a13c13f2, type: 3}
   m_PrefabInstance: {fileID: 1907159527}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1019910953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019910952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de3b1240ec02d54bb9d00b70111b3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: Attack
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1019910961}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &1019910961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6814294675043101731, guid: daa10695c06ce0d479caf181a13c13f2, type: 3}
+  m_PrefabInstance: {fileID: 1907159527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019910952}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54303f098bb8e6343b2167eb950b390e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1019910966
 MonoBehaviour:
   m_ObjectHideFlags: 0
