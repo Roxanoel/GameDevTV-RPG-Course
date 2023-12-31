@@ -97,14 +97,14 @@ namespace RPG.Dialogue
 
         private void TriggerEnterAction()
         {
-            if (currentNode != null)
+            if (currentNode != null && currentNode.GetOnEnterAction() != "")
             {
                 Debug.Log(currentNode.GetOnEnterAction());
             }
         }
         private void TriggerExitAction()
         {
-            if (currentNode != null)
+            if (currentNode != null && currentNode.GetOnExitAction() != "")
             {
                 Debug.Log(currentNode.GetOnExitAction());
             }
