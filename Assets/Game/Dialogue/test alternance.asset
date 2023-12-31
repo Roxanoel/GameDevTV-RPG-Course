@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: f8c289b8-d424-4391-9d84-12a0549d577f
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  text: AAAnd another node
+  text: AAAnd another node (last)
   children: []
   rect:
     serializedVersion: 2
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 63f51e38-536a-40b0-9772-9841d5e33276
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Perhaps some conditional AI reply
+  text: Perhaps some conditional AI reply (last)
   children: []
   rect:
     serializedVersion: 2
@@ -162,5 +162,5 @@ MonoBehaviour:
     y: 0
     width: 200
     height: 200
-  onEnterAction: 
+  onEnterAction: test root entry
   onExitAction: 

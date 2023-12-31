@@ -20,10 +20,8 @@ namespace RPG.Dialogue
             currentDialogue = newDialogue;
             // Initialise currentNode as root node of current dialogue
             currentNode = currentDialogue.GetRootNode();
-            // Enter & exit
-            currentNode.GetOnEnterAction();
-            currentNode.GetOnExitAction();
-            // Trigger event
+            // Trigger events
+            TriggerEnterAction();
             onConversationUpdated();
         }
 
