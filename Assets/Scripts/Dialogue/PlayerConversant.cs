@@ -11,12 +11,14 @@ namespace RPG.Dialogue
         [SerializeField] Dialogue testDialogue;
         Dialogue currentDialogue; // In the future this will be changed/set programmatically
         DialogueNode currentNode = null;
+        AIConversant currentConversant = null;
         bool showingReplies = false;
 
         public event Action onConversationUpdated;
 
-        public void StartDialogue(Dialogue newDialogue)
+        public void StartDialogue(AIConversant newConversant, Dialogue newDialogue)
         {
+            currentConversant = newConversant;
             currentDialogue = newDialogue;
             // Initialise currentNode as root node of current dialogue
             currentNode = currentDialogue.GetRootNode();
@@ -34,6 +36,7 @@ namespace RPG.Dialogue
         {
             TriggerExitAction();
 
+            currentConversant = null;
             currentDialogue = null;
             currentNode = null;
             showingReplies = false;

@@ -24,7 +24,7 @@ namespace RPG.Dialogue
         {
             if (Input.GetMouseButtonDown(0) && dialogue != null)
             {
-                playerConversant.StartDialogue(dialogue);
+                playerConversant.StartDialogue(this, dialogue);
             }
             return true;
         }
