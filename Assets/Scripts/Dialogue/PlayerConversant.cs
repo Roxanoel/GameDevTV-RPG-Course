@@ -113,9 +113,9 @@ namespace RPG.Dialogue
             }
         }
 
-        private void TriggerAction(string action)
+        private void TriggerAction(DialogueTriggerType action)
         {
-            if (action == "" || currentConversant == null) return;
+            if (action == DialogueTriggerType.None || currentConversant == null) return;
 
             foreach (DialogueTrigger trigger in currentConversant.GetComponents<DialogueTrigger>())
             {

@@ -10214,7 +10214,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9434339, y: 1}
+    m_SensorSize: {x: 2.022082, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12025,7 +12025,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9434339, y: 1}
+    m_SensorSize: {x: 2.022082, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12279,7 +12279,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9434339, y: 1}
+    m_SensorSize: {x: 2.022082, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -13624,7 +13624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de3b1240ec02d54bb9d00b70111b3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action: Attack
+  action: 1
   onTrigger:
     m_PersistentCalls:
       m_Calls:
