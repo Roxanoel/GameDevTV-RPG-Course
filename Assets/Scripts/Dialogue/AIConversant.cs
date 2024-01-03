@@ -22,6 +22,8 @@ namespace RPG.Dialogue
 
         public bool HandleRaycast(PlayerController callingController)
         {
+            if (!enabled) return false;
+
             if (Input.GetMouseButtonDown(0) && dialogue != null)
             {
                 playerConversant.StartDialogue(this, dialogue);
