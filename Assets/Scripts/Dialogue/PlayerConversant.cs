@@ -122,6 +122,11 @@ namespace RPG.Dialogue
                 trigger.Trigger(action);
             }
         }
+
+        public string GetCurrentConversantName()
+        {
+            return currentConversant.GetConversantName();
+        }
     }
 }
 

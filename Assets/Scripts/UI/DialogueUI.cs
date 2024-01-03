@@ -15,6 +15,7 @@ namespace RPG.UI
         [SerializeField] Button quitButton;
         [SerializeField] Transform repliesRoot;
         [SerializeField] GameObject replyPrefab;
+        [SerializeField] TextMeshProUGUI conversantName;
 
         void Start()
         {
@@ -62,7 +63,8 @@ namespace RPG.UI
             {
                 return;
             }
-            
+
+            conversantName.text = playerConversant.GetCurrentConversantName();
             AIText.text = playerConversant.GetText();
 
             // Clear replies

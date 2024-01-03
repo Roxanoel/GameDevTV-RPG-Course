@@ -9,6 +9,7 @@ namespace RPG.Dialogue
     {
         [SerializeField] Dialogue dialogue;
         PlayerConversant playerConversant;
+        [SerializeField] string conversantName;
 
         private void Start()
         {
@@ -29,6 +30,12 @@ namespace RPG.Dialogue
                 playerConversant.StartDialogue(this, dialogue);
             }
             return true;
+        }
+
+        public string GetConversantName()
+        {
+            if (conversantName == "") return this.gameObject.name;
+            else return conversantName;
         }
     }
 }

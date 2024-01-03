@@ -1478,6 +1478,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1507687151055316786, guid: b0da24b66f24882478555120bb198c7b, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.9956205
+      objectReference: {fileID: 0}
     - target: {fileID: 2244914928260503768, guid: b0da24b66f24882478555120bb198c7b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -13758,6 +13762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: e061cac482c8fa04cabb428dac14ef92, type: 2}
+  conversantName: Suspicious Guard
 --- !u!1001 &1033846475
 PrefabInstance:
   m_ObjectHideFlags: 0
