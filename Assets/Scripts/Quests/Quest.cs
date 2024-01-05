@@ -8,7 +8,7 @@ namespace RPG.Quests
 
     public class Quest : ScriptableObject
     {
-
+        [SerializeField] string[] objectives;
         
     }
 }
