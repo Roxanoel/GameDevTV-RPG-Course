@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using RPG.Quests;
 using UnityEngine;
 
 public class QuestItemUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] TextMeshProUGUI title;
+    [SerializeField] TextMeshProUGUI progress;
+    
+    public void Setup(Quest quest)
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
