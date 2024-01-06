@@ -11,12 +11,11 @@ public class QuestListUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach(Quest quest in tempQuests)
+        {
+            QuestItemUI questItemUI = Instantiate(questPrefab, this.transform);
+            questItemUI.Setup(quest);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

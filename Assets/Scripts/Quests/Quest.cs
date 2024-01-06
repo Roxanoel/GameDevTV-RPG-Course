@@ -9,6 +9,11 @@ namespace RPG.Quests
     public class Quest : ScriptableObject
     {
         [SerializeField] string[] objectives;
+
+        public int GetObjectivesNumber()
+        {
+            return objectives.Length;
+        }
         
     }
 }
