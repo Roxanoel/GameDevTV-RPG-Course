@@ -12,6 +12,6 @@ public class QuestItemUI : MonoBehaviour
     public void Setup(Quest quest)
     {
         title.text = quest.GetTitle();
-        progress.text = $"{quest.GetObjectivesNumber()}/{quest.GetObjectivesNumber()}"; // FOR NOW
+        progress.text = $"{quest.GetObjectivesCount()}/{quest.GetObjectivesCount()}"; // FOR NOW
     }
 }

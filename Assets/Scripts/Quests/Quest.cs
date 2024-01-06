@@ -10,7 +10,7 @@ namespace RPG.Quests
     {
         [SerializeField] string[] objectives;
 
-        public int GetObjectivesNumber()
+        public int GetObjectivesCount()
         {
             return objectives.Length;
         }

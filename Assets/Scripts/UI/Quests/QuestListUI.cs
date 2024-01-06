@@ -11,6 +11,8 @@ public class QuestListUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Ensure we clear the list before populating it
+        transform.DetachChildren();
         foreach(Quest quest in tempQuests)
         {
             QuestItemUI questItemUI = Instantiate(questPrefab, this.transform);
