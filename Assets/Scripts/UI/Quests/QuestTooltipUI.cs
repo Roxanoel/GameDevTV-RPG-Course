@@ -14,7 +14,19 @@ namespace RPG.UI.Quests
         
         public void Setup(Quest quest)
         {
-            Debug.Log(quest);
+            title.text = quest.GetTitle();
+            // Before populating the list of objectives make sure it's empty
+            foreach (Transform item in objectivesContainer)
+            {
+                Destroy(item.gameObject);
+            }
+
+            foreach (string objective in quest.GetObjectivesList())
+            {
+                GameObject objectiveInstance = Instantiate(objectivePrefab, objectivesContainer) as GameObject;
+                // TEMP, better way to do this involves script for objective + objective SO
+                objectiveInstance.GetComponentInChildren<TextMeshProUGUI>().text = objective;
+            }
         }
     }
 }

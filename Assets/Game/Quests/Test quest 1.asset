@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ae424583bdb2e4c8f936e360bc7bc6, type: 3}
   m_Name: Test quest 1
   m_EditorClassIdentifier: 
-  objectives: []
+  objectives:
+  - first objective
+  - second objective
+  - safgasd objective
