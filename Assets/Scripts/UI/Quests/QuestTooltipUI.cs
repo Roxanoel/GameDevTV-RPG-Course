@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Quests;
 using UnityEngine;
 
-public class QuestTooltipUI : MonoBehaviour
+namespace RPG.UI.Quests
 {
-    // Start is called before the first frame update
-    void Start()
+    public class QuestTooltipUI : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void Setup(Quest quest)
+        {
+            Debug.Log(quest);
+        }
     }
 }
