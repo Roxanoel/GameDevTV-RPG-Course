@@ -24,9 +24,11 @@ namespace RPG.UI.Quests
 
             foreach (string objective in quest.GetObjectivesList())
             {
+                Debug.Log(objective);
                 GameObject objectiveInstance = Instantiate(objectivePrefab, objectivesContainer) as GameObject;
-                // TEMP, better way to do this involves script for objective + objective SO
-                objectiveInstance.GetComponentInChildren<TextMeshProUGUI>().text = objective;
+                // Setup the objective
+                QuestObjectiveUI objectiveUI = objectiveInstance.GetComponent<QuestObjectiveUI>();
+                objectiveUI.SetTitleText(objective);
             }
         }
     }
