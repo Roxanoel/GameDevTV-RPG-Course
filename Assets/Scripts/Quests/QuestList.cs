@@ -6,7 +6,7 @@ namespace RPG.Quests
 {
     public class QuestList : MonoBehaviour
     {
-        
+        [SerializeField] QuestStatus[] statuses;
         
         // Start is called before the first frame update
         void Start()
