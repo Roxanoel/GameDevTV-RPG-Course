@@ -87,6 +87,24 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: 442311c923fee7a4c97faa6fdeb43d7d, type: 3}
     offsetDivisionValue: 2
   raycastRadius: 0.5
+--- !u!114 &4209290127517347674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2403323532606545245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7961a9b719ad941b6f3b7a718b1bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statuses:
+  - quest: {fileID: 11400000, guid: bd7dc0fc6dbd53b44ae3b9d55479c3c5, type: 2}
+    completedObjectives:
+    - first objective
+  - quest: {fileID: 11400000, guid: c958a8d4ee001864ca6c909eea76c78a, type: 2}
+    completedObjectives: []
 --- !u!114 &5118684704550884472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,24 +143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testDialogue: {fileID: 11400000, guid: e061cac482c8fa04cabb428dac14ef92, type: 2}
---- !u!114 &4209290127517347674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2403323532606545245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7961a9b719ad941b6f3b7a718b1bf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statuses:
-  - quest: {fileID: 11400000, guid: bd7dc0fc6dbd53b44ae3b9d55479c3c5, type: 2}
-    completedObjectives:
-    - 
-  - quest: {fileID: 11400000, guid: c958a8d4ee001864ca6c909eea76c78a, type: 2}
-    completedObjectives: []
 --- !u!1001 &2418740048029928972
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -24,11 +24,11 @@ namespace RPG.UI.Quests
 
             foreach (string objective in quest.GetObjectivesList())
             {
-                Debug.Log(objective);
                 GameObject objectiveInstance = Instantiate(objectivePrefab, objectivesContainer) as GameObject;
                 // Setup the objective
                 QuestObjectiveUI objectiveUI = objectiveInstance.GetComponent<QuestObjectiveUI>();
                 objectiveUI.SetTitleText(objective);
+                objectiveUI.SetCompletionStatus(status.IsObjectiveComplete(objective));
             }
         }
     }
