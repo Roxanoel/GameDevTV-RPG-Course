@@ -137,7 +137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7961a9b719ad941b6f3b7a718b1bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statuses: []
+  statuses:
+  - quest: {fileID: 11400000, guid: bd7dc0fc6dbd53b44ae3b9d55479c3c5, type: 2}
+    completedObjectives:
+    - 
+  - quest: {fileID: 11400000, guid: c958a8d4ee001864ca6c909eea76c78a, type: 2}
+    completedObjectives: []
 --- !u!1001 &2418740048029928972
 PrefabInstance:
   m_ObjectHideFlags: 0
