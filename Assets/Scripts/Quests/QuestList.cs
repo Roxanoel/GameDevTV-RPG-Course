@@ -8,16 +8,9 @@ namespace RPG.Quests
     {
         [SerializeField] QuestStatus[] statuses;
         
-        // Start is called before the first frame update
-        void Start()
+        public QuestStatus[] GetStatuses()
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            return statuses;
         }
     }
 }

@@ -9,5 +9,15 @@ namespace RPG.Quests
     {
         [SerializeField] Quest quest;
         [SerializeField] List<string> completedObjectives;
+
+        public Quest GetQuest()
+        {
+            return quest;
+        }
+
+        public int GetCompletedObjectivesCount()
+        {
+            return completedObjectives.Count;
+        }
     }
 }
