@@ -12,8 +12,9 @@ namespace RPG.UI.Quests
         [SerializeField] Transform objectivesContainer;
         [SerializeField] GameObject objectivePrefab;
         
-        public void Setup(Quest quest)
+        public void Setup(QuestStatus status)
         {
+            Quest quest = status.GetQuest();
             title.text = quest.GetTitle();
             // Before populating the list of objectives make sure it's empty
             foreach (Transform item in objectivesContainer)

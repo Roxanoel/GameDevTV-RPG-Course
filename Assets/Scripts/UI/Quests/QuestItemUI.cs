@@ -24,4 +24,9 @@ public class QuestItemUI : MonoBehaviour
     {
         return currentQuest;
     }
+
+    public QuestStatus GetQuestStatus()
+    {
+        return currentQuestStatus;
+    }
 }
