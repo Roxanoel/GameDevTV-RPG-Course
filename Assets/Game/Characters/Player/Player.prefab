@@ -70,7 +70,7 @@ MonoBehaviour:
   cursorMappings:
   - type: 0
     texture: {fileID: 2800000, guid: bb57a4c5a1ec38a41949d0975ede9ac1, type: 3}
-    offsetDivisionValue: 2
+    offsetDivisionValue: 4
   - type: 1
     texture: {fileID: 2800000, guid: 1b362737dfa014a40a71ecaffce5e053, type: 3}
     offsetDivisionValue: 2
@@ -79,13 +79,13 @@ MonoBehaviour:
     offsetDivisionValue: 4
   - type: 3
     texture: {fileID: 2800000, guid: f8d327f88e3408f42b3dc6850224b676, type: 3}
-    offsetDivisionValue: 2
+    offsetDivisionValue: 4
   - type: 4
     texture: {fileID: 2800000, guid: b669239a8c1b6ac4080aa3be64aefa82, type: 3}
-    offsetDivisionValue: 2
+    offsetDivisionValue: 4
   - type: 5
     texture: {fileID: 2800000, guid: 442311c923fee7a4c97faa6fdeb43d7d, type: 3}
-    offsetDivisionValue: 2
+    offsetDivisionValue: 4
   raycastRadius: 0.5
 --- !u!114 &4209290127517347674
 MonoBehaviour:
@@ -99,12 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7961a9b719ad941b6f3b7a718b1bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statuses:
-  - quest: {fileID: 11400000, guid: bd7dc0fc6dbd53b44ae3b9d55479c3c5, type: 2}
-    completedObjectives:
-    - first objective
-  - quest: {fileID: 11400000, guid: c958a8d4ee001864ca6c909eea76c78a, type: 2}
-    completedObjectives: []
 --- !u!114 &5118684704550884472
 MonoBehaviour:
   m_ObjectHideFlags: 0
