@@ -12,6 +12,7 @@ namespace RPG.Quests
         [SerializeField] string[] objectives;
         [SerializeField] List<Reward> rewards = new List<Reward>();
 
+        [System.Serializable]
         class Reward
         {
             public int number;
