@@ -10,7 +10,8 @@ namespace RPG.Quests
 
         public void GiveQuest()
         {
-            Debug.Log($"Give Quest: {quest.GetTitle()}");
+            QuestList questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
+            questList.AddQuest(quest);
         }
     }
 
