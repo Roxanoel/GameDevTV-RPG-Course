@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using GameDevTV.Saving;
 
 namespace RPG.Quests
 {
-    public class QuestList : MonoBehaviour
+    public class QuestList : MonoBehaviour, ISaveable
     {
         List<QuestStatus> statuses = new List<QuestStatus>();
         public event Action onListUpdated;
@@ -38,6 +39,16 @@ namespace RPG.Quests
             {
                 onListUpdated();
             }
+        }
+
+        public object CaptureState()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RestoreState(object state)
+        {
+            throw new NotImplementedException();
         }
     }
 }
