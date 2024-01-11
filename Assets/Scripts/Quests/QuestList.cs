@@ -43,12 +43,28 @@ namespace RPG.Quests
 
         public object CaptureState()
         {
-            throw new NotImplementedException();
+            List<object> state = new List<object>();
+
+            foreach (QuestStatus status in statuses)
+            {
+                state.Add(status.CaptureState());
+            }
+
+            return state;
         }
 
         public void RestoreState(object state)
         {
-            throw new NotImplementedException();
+            List<object> stateList = state as List<object>;
+            if (stateList == null) return;
+
+            // Clear any state that might remain
+            statuses.Clear();
+            // Repopulate list from saved state
+            foreach (object objectState in stateList)
+            {
+                statuses.Add(new QuestStatus(objectState));
+            }
         }
     }
 }
