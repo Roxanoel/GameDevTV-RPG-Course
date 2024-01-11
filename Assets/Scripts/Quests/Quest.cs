@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameDevTV.Inventories;
 
 namespace RPG.Quests
 {
@@ -9,6 +10,13 @@ namespace RPG.Quests
     public class Quest : ScriptableObject
     {
         [SerializeField] string[] objectives;
+        [SerializeField] List<Reward> rewards = new List<Reward>();
+
+        class Reward
+        {
+            public int number;
+            public InventoryItem item;
+        }
 
         public int GetObjectivesCount()
         {
