@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1985646960380122576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda9a41a282295d4ea4d79480b0b2b06, type: 3}
+  m_Name: 73478ce5-dbbb-40f0-b625-294a843a8ad5
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Ok there you go, just do these things
+  children:
+  - d5e4a610-c8b9-405f-b0b3-fa6c4eadeaec
+  rect:
+    serializedVersion: 2
+    x: 559
+    y: 34
+    width: 200
+    height: 200
+  onEnterAction: 0
+  onExitAction: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,7 +38,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: 7529384877691032941}
+  - {fileID: 8087635457545353072}
+  - {fileID: 2462477035268924596}
+  - {fileID: -1985646960380122576}
+  - {fileID: 884931926898256098}
   newNodeOffset: {x: 250, y: 0}
+--- !u!114 &884931926898256098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda9a41a282295d4ea4d79480b0b2b06, type: 3}
+  m_Name: d5e4a610-c8b9-405f-b0b3-fa6c4eadeaec
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: kthxbye
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 809
+    y: 34
+    width: 200
+    height: 200
+  onEnterAction: 0
+  onExitAction: 0
+--- !u!114 &2462477035268924596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda9a41a282295d4ea4d79480b0b2b06, type: 3}
+  m_Name: 46189731-064a-4470-8240-dde5a45a372f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Nah, I'm too busy.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 298
+    y: 274
+    width: 200
+    height: 200
+  onEnterAction: 0
+  onExitAction: 0
 --- !u!114 &7529384877691032941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,12 +102,38 @@ MonoBehaviour:
   m_Name: 96b64c6b-da52-4ed3-bad5-9cc0fdc5084f
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: 
-  children: []
+  text: Hello, can I give you a quest?
+  children:
+  - a9499790-477b-490e-a089-d7adbd4b13d1
+  - 46189731-064a-4470-8240-dde5a45a372f
   rect:
     serializedVersion: 2
-    x: 0
-    y: 0
+    x: 59
+    y: 32
+    width: 200
+    height: 200
+  onEnterAction: 0
+  onExitAction: 0
+--- !u!114 &8087635457545353072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda9a41a282295d4ea4d79480b0b2b06, type: 3}
+  m_Name: a9499790-477b-490e-a089-d7adbd4b13d1
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Sure, why not?
+  children:
+  - 73478ce5-dbbb-40f0-b625-294a843a8ad5
+  rect:
+    serializedVersion: 2
+    x: 309
+    y: 33
     width: 200
     height: 200
   onEnterAction: 0
