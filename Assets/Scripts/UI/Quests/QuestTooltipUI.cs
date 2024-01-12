@@ -50,7 +50,7 @@ namespace RPG.UI.Quests
                 {
                     rewards += $"{reward.number}x ";
                 }
-                rewards += reward.item.name;
+                rewards += reward.item.GetDisplayName();
             }
             return rewards;
         }
