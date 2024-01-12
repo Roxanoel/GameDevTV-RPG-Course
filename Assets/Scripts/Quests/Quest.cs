@@ -9,7 +9,7 @@ namespace RPG.Quests
 
     public class Quest : ScriptableObject
     {
-        [SerializeField] Objective[] objectives;
+        [SerializeField] List<Objective> objectives = new List<Objective>();
         [SerializeField] List<Reward> rewards = new List<Reward>();
 
         [System.Serializable]
@@ -34,10 +34,19 @@ namespace RPG.Quests
 
         public int GetObjectivesCount()
         {
-            return objectives.Length;
+            return objectives.Count;
         }
 
-        public Objective[] GetObjectives()
+        public bool HasObjective(string objectiveRef)
+        {
+            foreach (Objective objective in objectives)
+            {
+                if (objective.reference == objectiveRef) return true;
+            }
+            return false;
+        }
+
+        public IEnumerable<Objective> GetObjectives()
         {
             return objectives;
         }
