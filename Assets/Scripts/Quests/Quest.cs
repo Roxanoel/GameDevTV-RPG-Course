@@ -13,7 +13,7 @@ namespace RPG.Quests
         [SerializeField] List<Reward> rewards = new List<Reward>();
 
         [System.Serializable]
-        class Reward
+        public class Reward
         {
             public int number;
             public InventoryItem item;
