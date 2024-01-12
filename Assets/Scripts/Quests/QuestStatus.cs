@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -61,5 +62,9 @@ namespace RPG.Quests
             return new QuestStatusRecord(this);
         }
 
+        public bool isComplete()
+        {
+            return true; // for now
+        }
     }
 }

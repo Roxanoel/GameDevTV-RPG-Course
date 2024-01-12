@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using GameDevTV.Saving;
+using GameDevTV.Inventories;
 
 namespace RPG.Quests
 {
@@ -52,9 +53,26 @@ namespace RPG.Quests
         {
             QuestStatus status = GetQuestStatus(quest);
             status.CompleteObjective(objectiveRef);
+            if (status.isComplete()) // TO DO
+            {
+                GiveReward(quest); // TO DO
+            }
             if (onListUpdated != null)
             {
                 onListUpdated();
+            }
+        }
+
+        private void GiveReward(Quest quest)
+        {
+            foreach (Quest.Reward reward in quest.GetRewards())
+            {
+                bool success = GetComponent<Inventory>().AddToFirstEmptySlot(reward.item, reward.number);
+                // In case inventory is full
+                if (!success)
+                {
+                    GetComponent<ItemDropper>().DropItem(reward.item, reward.number);
+                }
             }
         }
 
