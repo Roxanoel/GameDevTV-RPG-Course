@@ -56,6 +56,11 @@ namespace RPG.Quests
             return this.name;
         }
 
+        public IEnumerable<Reward> GetRewards()
+        {
+            return rewards;
+        }
+
         public static Quest GetByName(string questName)
         {
             foreach (Quest quest in Resources.LoadAll<Quest>(""))
