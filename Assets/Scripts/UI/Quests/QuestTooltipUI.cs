@@ -52,6 +52,8 @@ namespace RPG.UI.Quests
                 }
                 rewards += reward.item.GetDisplayName();
             }
+            if (rewards == "") return "None";
+            else 
             return rewards;
         }
     }
