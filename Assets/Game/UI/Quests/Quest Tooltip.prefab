@@ -292,6 +292,7 @@ MonoBehaviour:
   title: {fileID: 1548968297495262478}
   objectivesContainer: {fileID: 8528205527663166541}
   objectivePrefab: {fileID: 8229720995637950193, guid: 9050bfbc246ab2d47b3d0b5a2847c8e2, type: 3}
+  rewardsText: {fileID: 2283164421553416595}
 --- !u!1 &4978598139393387373
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,7 +863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3762848795445795593, guid: 9050bfbc246ab2d47b3d0b5a2847c8e2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 343.9414
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3762848795445795593, guid: 9050bfbc246ab2d47b3d0b5a2847c8e2, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1000,7 +1001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3762848795445795593, guid: 9050bfbc246ab2d47b3d0b5a2847c8e2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 343.9414
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3762848795445795593, guid: 9050bfbc246ab2d47b3d0b5a2847c8e2, type: 3}
       propertyPath: m_AnchoredPosition.y
