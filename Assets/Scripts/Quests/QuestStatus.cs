@@ -48,6 +48,14 @@ namespace RPG.Quests
             return completedObjectives.Contains(objective);
         }
 
+        public void CompleteObjective(string objective)
+        {
+            if (quest.HasObjective(objective))
+            {
+                completedObjectives.Add(objective);
+            }
+        }
+
         public object CaptureState()
         {
             return new QuestStatusRecord(this);
