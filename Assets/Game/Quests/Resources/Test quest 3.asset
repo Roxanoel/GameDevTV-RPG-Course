@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: Test quest 3
   m_EditorClassIdentifier: 
   objectives:
-  - Do a thing
-  - Do another thing
+  - reference: obj-1
+    description: Do the first thing
+  - reference: obj-2
+    description: do the second thing
+  rewards:
+  - number: 1
+    item: {fileID: 11400000, guid: e887f84f4020bd643b56a5f7a2b18781, type: 2}

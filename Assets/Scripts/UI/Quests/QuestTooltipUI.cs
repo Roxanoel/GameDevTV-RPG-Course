@@ -22,13 +22,13 @@ namespace RPG.UI.Quests
                 Destroy(item.gameObject);
             }
 
-            foreach (string objective in quest.GetObjectivesList())
+            foreach (Quest.Objective objective in quest.GetObjectives())
             {
                 GameObject objectiveInstance = Instantiate(objectivePrefab, objectivesContainer) as GameObject;
                 // Setup the objective
                 QuestObjectiveUI objectiveUI = objectiveInstance.GetComponent<QuestObjectiveUI>();
-                objectiveUI.SetTitleText(objective);
-                objectiveUI.SetCompletionStatus(status.IsObjectiveComplete(objective));
+                objectiveUI.SetTitleText(objective.description);
+                objectiveUI.SetCompletionStatus(status.IsObjectiveComplete(objective.reference));
             }
         }
     }
