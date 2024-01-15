@@ -8,5 +8,11 @@ namespace RPG.Quests
     {
         [SerializeField] Quest quest;
         [SerializeField] string objectiveRef;
+
+        public void CompleteObjective()
+        {
+            QuestList questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
+            questList.CompleteObjective(quest, objectiveRef);
+        }
     }
 }
