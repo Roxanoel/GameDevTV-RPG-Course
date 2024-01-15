@@ -36,37 +36,13 @@ MonoBehaviour:
   m_Name: 95ae5576-d693-4c87-b637-bc69f76431d6
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  text: First possible reply
+  text: I am aggroing you
   children:
   - 415c79e0-6bf8-4d6d-a701-b2283a79e382
-  - 63f51e38-536a-40b0-9772-9841d5e33276
   rect:
     serializedVersion: 2
-    x: 245
-    y: 118
-    width: 200
-    height: 200
-  onEnterAction: 0
-  onExitAction: 0
---- !u!114 &-96108842028040801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fda9a41a282295d4ea4d79480b0b2b06, type: 3}
-  m_Name: 63f51e38-536a-40b0-9772-9841d5e33276
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: Perhaps some conditional AI reply (last)
-  children: []
-  rect:
-    serializedVersion: 2
-    x: 495
-    y: 339
+    x: 281
+    y: 110
     width: 200
     height: 200
   onEnterAction: 0
@@ -88,7 +64,6 @@ MonoBehaviour:
   - {fileID: -624477311605232490}
   - {fileID: 2932672311059234553}
   - {fileID: -843424152917775244}
-  - {fileID: -96108842028040801}
   - {fileID: 630911682673974285}
   newNodeOffset: {x: 250, y: 0}
 --- !u!114 &630911682673974285
@@ -104,12 +79,12 @@ MonoBehaviour:
   m_Name: e14e744b-f0c2-41db-afa2-ded544e602b8
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  text: An alternate reply you can choose
+  text: Choose this option to complete a quest objective
   children: []
   rect:
     serializedVersion: 2
-    x: 254
-    y: 356
+    x: 306
+    y: 402
     width: 200
     height: 200
   onEnterAction: 0
@@ -127,7 +102,7 @@ MonoBehaviour:
   m_Name: 415c79e0-6bf8-4d6d-a701-b2283a79e382
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Another reply
+  text: Are you sure?
   children:
   - f8c289b8-d424-4391-9d84-12a0549d577f
   rect:
