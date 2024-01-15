@@ -5,5 +5,6 @@ namespace RPG.Dialogue
         None,
         Attack,
         GiveQuest,
+        CompleteObjective,
     }
 }

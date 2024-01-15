@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectives:
   - reference: obj-1
-    description: Do the first thing
+    description: Speak to the guard
   - reference: obj-2
     description: do the second thing
   rewards:
