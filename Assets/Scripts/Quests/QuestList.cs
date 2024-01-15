@@ -53,9 +53,9 @@ namespace RPG.Quests
         {
             QuestStatus status = GetQuestStatus(quest);
             status.CompleteObjective(objectiveRef);
-            if (status.IsComplete()) // TO DO
+            if (status.IsComplete()) 
             {
-                GiveReward(quest); // TO DO
+                GiveReward(quest); 
             }
             if (onListUpdated != null)
             {
