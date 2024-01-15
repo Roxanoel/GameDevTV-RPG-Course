@@ -53,7 +53,7 @@ namespace RPG.Quests
         {
             QuestStatus status = GetQuestStatus(quest);
             status.CompleteObjective(objectiveRef);
-            if (status.isComplete()) // TO DO
+            if (status.IsComplete()) // TO DO
             {
                 GiveReward(quest); // TO DO
             }

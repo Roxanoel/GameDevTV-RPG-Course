@@ -62,9 +62,14 @@ namespace RPG.Quests
             return new QuestStatusRecord(this);
         }
 
-        public bool isComplete()
+        public bool IsComplete()
         {
-            return true; // for now
+            foreach (Quest.Objective objective in quest.GetObjectives())
+            {
+                if (!completedObjectives.Contains(objective.reference))
+                    return false;
+            }
+            return true;
         }
     }
 }
