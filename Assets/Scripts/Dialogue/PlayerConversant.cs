@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using RPG.Core;
 
 namespace RPG.Dialogue
 {
@@ -87,11 +88,16 @@ namespace RPG.Dialogue
         {
             foreach (DialogueNode node in inputNodes)
             {
-                if (node.CheckCondition())
+                if (node.CheckCondition(GetEvaluators()))
                 {
                     yield return node;
                 }
             }
+        }
+
+        private IEnumerable<IPredicateEvaluator> GetEvaluators()
+        {
+            return GetComponents<IPredicateEvaluator>();
         }
 
         public IEnumerable<DialogueNode> GetChoices()
