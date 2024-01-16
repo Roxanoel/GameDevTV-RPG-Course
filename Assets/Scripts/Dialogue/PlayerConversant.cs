@@ -45,7 +45,7 @@ namespace RPG.Dialogue
 
         public bool ShowingReplies()
         {
-            return currentDialogue.GetPlayerChildren(currentNode).Count() > 0;  
+            return FilterOnCondition(currentDialogue.GetPlayerChildren(currentNode)).Count() > 0;  
         }
 
         public string GetText()
@@ -67,7 +67,7 @@ namespace RPG.Dialogue
                 onConversationUpdated(); // For good measure 
                 return;
             }
-            DialogueNode[] children = currentDialogue.GetAIChildren(currentNode).ToArray();
+            DialogueNode[] children = FilterOnCondition(currentDialogue.GetAIChildren(currentNode)).ToArray();
             // Trigger exist action before changing the node
             TriggerExitAction();
             // For now, returning a random child node 
@@ -80,12 +80,17 @@ namespace RPG.Dialogue
         // Tells you if you have reached a leaf node of the dialogue tree
         public bool HasNext()
         {
-            return currentDialogue.GetAIChildren(currentNode).Count() > 0;
+            return FilterOnCondition(currentDialogue.GetAIChildren(currentNode)).Count() > 0;
+        }
+
+        private IEnumerable<DialogueNode> FilterOnCondition(IEnumerable<DialogueNode> inputNodes)
+        {
+            return inputNodes; //for now
         }
 
         public IEnumerable<DialogueNode> GetChoices()
         {
-            return currentDialogue.GetPlayerChildren(currentNode);
+            return FilterOnCondition(currentDialogue.GetPlayerChildren(currentNode));
         }
 
         public void SelectChoice(DialogueNode chosenNode)
