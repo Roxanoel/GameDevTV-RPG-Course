@@ -79,14 +79,12 @@ namespace RPG.Quests
 
         public bool? Evaluate(string predicate, string[] parameters)
         {
-            Quest quest = Quest.GetByName(parameters[0]);
-
             switch (predicate)
             {
-                case "HasQuest": return HasQuest(quest);
+                case "HasQuest": return HasQuest(Quest.GetByName(parameters[0]));
                 case "CompleteQuest":
                     {
-                        QuestStatus status = GetQuestStatus(quest);
+                        QuestStatus status = GetQuestStatus(Quest.GetByName(parameters[0]));
                         return status.IsComplete();
                     }
                 //default: return null;

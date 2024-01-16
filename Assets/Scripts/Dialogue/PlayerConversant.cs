@@ -66,6 +66,7 @@ namespace RPG.Dialogue
             {
                 Debug.Log("reached end of dialogue branch");
                 onConversationUpdated(); // For good measure 
+                Quit();
                 return;
             }
             DialogueNode[] children = FilterOnCondition(currentDialogue.GetAIChildren(currentNode)).ToArray();
