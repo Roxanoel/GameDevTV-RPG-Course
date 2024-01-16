@@ -21,7 +21,10 @@ public class QuestListUI : MonoBehaviour
     private void Redraw()
     {
         // Ensure we clear the list before populating it
-        transform.DetachChildren();
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
         // Populate the list
         foreach (QuestStatus status in questList.GetStatuses())
         {
