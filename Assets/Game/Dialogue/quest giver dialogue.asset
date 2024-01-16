@@ -17,12 +17,16 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 326
-    y: 497
+    x: 341
+    y: 484
     width: 200
     height: 200
   onEnterAction: 0
   onExitAction: 0
+  condition:
+    predicate: HasQuest
+    parameters:
+    - Test quest 3
 --- !u!114 &-1985646960380122576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +51,9 @@ MonoBehaviour:
     height: 200
   onEnterAction: 2
   onExitAction: 0
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +97,9 @@ MonoBehaviour:
     height: 200
   onEnterAction: 0
   onExitAction: 0
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &2462477035268924596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +123,9 @@ MonoBehaviour:
     height: 200
   onEnterAction: 0
   onExitAction: 0
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &7529384877691032941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +152,9 @@ MonoBehaviour:
     height: 200
   onEnterAction: 0
   onExitAction: 0
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &8087635457545353072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,3 +179,6 @@ MonoBehaviour:
     height: 200
   onEnterAction: 0
   onExitAction: 0
+  condition:
+    predicate: 
+    parameters: []
