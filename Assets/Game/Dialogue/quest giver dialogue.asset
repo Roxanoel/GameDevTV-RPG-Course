@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3181366443180580011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda9a41a282295d4ea4d79480b0b2b06, type: 3}
+  m_Name: eb931206-b312-45a5-99d4-976ffd98037c
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I already have your quest.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 341
+    y: 484
+    width: 200
+    height: 200
+  onEnterAction: 0
+  onExitAction: 0
+  condition:
+    predicate: HasQuest
+    parameters:
+    - Test quest 3
 --- !u!114 &-1985646960380122576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24,6 +51,9 @@ MonoBehaviour:
     height: 200
   onEnterAction: 2
   onExitAction: 0
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,6 +72,7 @@ MonoBehaviour:
   - {fileID: 2462477035268924596}
   - {fileID: -1985646960380122576}
   - {fileID: 884931926898256098}
+  - {fileID: -3181366443180580011}
   newNodeOffset: {x: 250, y: 0}
 --- !u!114 &884931926898256098
 MonoBehaviour:
@@ -66,6 +97,9 @@ MonoBehaviour:
     height: 200
   onEnterAction: 0
   onExitAction: 0
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &2462477035268924596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,12 +117,15 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 298
-    y: 274
+    x: 345
+    y: 277
     width: 200
     height: 200
   onEnterAction: 0
   onExitAction: 0
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &7529384877691032941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +143,7 @@ MonoBehaviour:
   children:
   - a9499790-477b-490e-a089-d7adbd4b13d1
   - 46189731-064a-4470-8240-dde5a45a372f
+  - eb931206-b312-45a5-99d4-976ffd98037c
   rect:
     serializedVersion: 2
     x: 59
@@ -114,6 +152,9 @@ MonoBehaviour:
     height: 200
   onEnterAction: 0
   onExitAction: 0
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &8087635457545353072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,3 +179,6 @@ MonoBehaviour:
     height: 200
   onEnterAction: 0
   onExitAction: 0
+  condition:
+    predicate: 
+    parameters: []

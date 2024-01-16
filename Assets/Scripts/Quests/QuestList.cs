@@ -5,10 +5,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using GameDevTV.Saving;
 using GameDevTV.Inventories;
+using RPG.Core;
 
 namespace RPG.Quests
 {
-    public class QuestList : MonoBehaviour, ISaveable
+    public class QuestList : MonoBehaviour, ISaveable, IPredicateEvaluator
     {
         List<QuestStatus> statuses = new List<QuestStatus>();
         public event Action onListUpdated;
@@ -75,6 +76,14 @@ namespace RPG.Quests
                 }
             }
         }
+
+        public bool? Evaluate(string predicate, string[] parameters)
+        {
+            if (predicate != "HasQuest") return null;
+
+            return HasQuest(Quest.GetByName(parameters[0]));
+        }
+
 
         public object CaptureState()
         {

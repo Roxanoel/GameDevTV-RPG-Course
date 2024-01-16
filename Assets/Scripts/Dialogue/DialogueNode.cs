@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System;
+using RPG.Core;
 
 namespace RPG.Dialogue
 {
@@ -13,6 +15,7 @@ namespace RPG.Dialogue
         [SerializeField] Rect rect = new Rect(0, 0, 200, 200);
         [SerializeField] DialogueTriggerType onEnterAction;
         [SerializeField] DialogueTriggerType onExitAction; // Could be extended to an array if I wanted many actions
+        [SerializeField] Condition condition;
 
         // Getters 
         public string GetText()
@@ -70,6 +73,11 @@ namespace RPG.Dialogue
             isPlayerSpeaking = value;
             EditorUtility.SetDirty(this);
         }
+        public bool CheckCondition(IEnumerable<IPredicateEvaluator> evaluators)
+        {
+            return condition.Check(evaluators);
+        }
+
 #if UNITY_EDITOR
         public void SetRectPosition(Vector2 newPosition)
         {
