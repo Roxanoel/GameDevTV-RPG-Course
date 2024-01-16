@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System;
 
 namespace RPG.Dialogue
 {
@@ -69,6 +70,10 @@ namespace RPG.Dialogue
             Undo.RecordObject(this, "Change dialogue speaker");
             isPlayerSpeaking = value;
             EditorUtility.SetDirty(this);
+        }
+        public bool CheckCondition()
+        {
+            throw new NotImplementedException();
         }
 #if UNITY_EDITOR
         public void SetRectPosition(Vector2 newPosition)

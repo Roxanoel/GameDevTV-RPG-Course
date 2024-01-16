@@ -85,7 +85,13 @@ namespace RPG.Dialogue
 
         private IEnumerable<DialogueNode> FilterOnCondition(IEnumerable<DialogueNode> inputNodes)
         {
-            return inputNodes; //for now
+            foreach (DialogueNode node in inputNodes)
+            {
+                if (node.CheckCondition())
+                {
+                    yield return node;
+                }
+            }
         }
 
         public IEnumerable<DialogueNode> GetChoices()
