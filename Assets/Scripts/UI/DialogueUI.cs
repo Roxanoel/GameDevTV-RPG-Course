@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using RPG.Dialogue;
@@ -45,7 +46,13 @@ namespace RPG.UI
             foreach (DialogueNode reply in playerConversant.GetChoices())
             {
                 GameObject replyInstance = Instantiate(replyPrefab, repliesRoot);
-                replyInstance.GetComponentInChildren<TextMeshProUGUI>().text = reply.GetText();
+                string replyTextString = reply.GetText();
+                // Add [END DIALOGUE] indicator if a reply is the last node in a branch
+                if (reply.GetChildren().Count() < 1)
+                {
+                    replyTextString += " [END DIALOGUE]";
+                }
+                replyInstance.GetComponentInChildren<TextMeshProUGUI>().text = replyTextString;
                 // Get a hold of the button component 
                 Button button = replyInstance.GetComponentInChildren<Button>();
                 button.onClick.AddListener(() => {
